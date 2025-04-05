@@ -1,0 +1,4 @@
+E:\Stealth Bridge SDK\obj\Debug\net6.0\StealthBridgeSDK.GeneratedMSBuildEditorConfig.editorconfig
+E:\Stealth Bridge SDK\obj\Debug\net6.0\StealthBridgeSDK.AssemblyInfoInputs.cache
+E:\Stealth Bridge SDK\obj\Debug\net6.0\StealthBridgeSDK.AssemblyInfo.cs
+E:\Stealth Bridge SDK\obj\Debug\net6.0\StealthBridgeSDK.csproj.CoreCompileInputs.cache
