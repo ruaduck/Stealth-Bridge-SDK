@@ -6,7 +6,6 @@ namespace StealthBridgeSDK.Spells
     public static class SpellsWrapper
     {
         private static dynamic _stealth => Py.Import("py_stealth.methods");
-
         public static void Cast(string spellName)
         {
             using (Py.GIL())
