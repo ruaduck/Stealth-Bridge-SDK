@@ -6,51 +6,58 @@ namespace StealthBridgeSDK.Character
     {
         private static dynamic _stealth => PythonImport.Stealth;
 
-        public static int GetMana()
+        public static int GetMana(uint mobile)
         {
             using (Py.GIL())
             {
-                return _stealth.GetMana();
+                return _stealth.GetMana(mobile);
             }
         }
 
-        public static int GetMaxMana()
+        public static int GetMaxMana(uint mobile)
         {
             using (Py.GIL())
             {
-                return _stealth.GetMaxMana();
+                return _stealth.GetMaxMana(mobile);
             }
         }
 
-        public static bool IsParalyzed()
+        public static bool IsParalyzed(uint mobile)
         {
             using (Py.GIL())
             {
-                return _stealth.IsParalyzed();
+                return _stealth.IsParalyzed(mobile);
             }
         }
 
-        public static bool IsPoisoned()
+        public static bool IsPoisoned(uint mobile)
         {
             using (Py.GIL())
             {
-                return _stealth.IsPoisoned();
+                return _stealth.IsPoisoned(mobile);
             }
         }
 
-        public static bool IsDead()
+        public static bool IsDead(uint mobile)
         {
             using (Py.GIL())
             {
-                return _stealth.Dead();
+                return _stealth.Dead(mobile);
             }
         }
 
-        public static bool IsWarMode()
+        public static bool IsWarMode(uint mobile)
         {
             using (Py.GIL())
             {
-                return _stealth.IsWarMode();
+                return _stealth.IsWarMode(mobile);
+            }
+        }
+        public static uint Self()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.Self();
             }
         }
     }

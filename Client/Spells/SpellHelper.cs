@@ -5,6 +5,7 @@ namespace StealthBridgeSDK.Spells
 {
     public enum Magery
     {
+        None,
         Clumsy,
         CreateFood,
         Feeblemind,
@@ -73,8 +74,7 @@ namespace StealthBridgeSDK.Spells
 
     public static class MageryHelper
     {
-        private static readonly Dictionary<Magery, (string Name, bool RequiresTarget, int ManaCost, float MinSkill)>
-            SpellMap = new()
+        public static readonly Dictionary<Magery, (string Name, bool RequiresTarget, int ManaCost, float MinSkill)> SpellMap = new()
             {
                 { Magery.Clumsy, ("Clumsy", true, 4, 0.0f) },
                 { Magery.CreateFood, ("Create Food", false, 4, 0.1f) },

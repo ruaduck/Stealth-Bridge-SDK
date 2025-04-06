@@ -1,33 +1,36 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\Stealth-Bridge-SDK\\",
+  "WorkspaceRootPath": "E:\\Stealth Bridge SDK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|d:\\github\\stealth-bridge-sdk\\stealthbridgesdk.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|e:\\stealth bridge sdk\\client\\spells\\spellcasthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\spells\\spellcasthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8722490F-0600-4005-AABA-4995D1A148F1}|..\\TestMagery\\TestMagery.csproj|e:\\testmagery\\magerytrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|e:\\stealth bridge sdk\\client\\mobiles\\characterwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\mobiles\\characterwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8722490F-0600-4005-AABA-4995D1A148F1}|..\\TestMagery\\TestMagery.csproj|e:\\testmagery\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|e:\\stealth bridge sdk\\bridgeconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:bridgeconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|e:\\stealth bridge sdk\\client\\pythonimport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\pythonimport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|e:\\stealth bridge sdk\\client\\config\\bridgeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\config\\bridgeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|e:\\stealth bridge sdk\\stealthbridgesdk.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:stealthbridgesdk.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|d:\\github\\stealth-bridge-sdk\\client\\spells\\spellswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\spells\\spellswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tidus_cku2cdr\\OneDrive\\Downloads\\Stealth New\\StealthBridge.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|d:\\github\\stealth-bridge-sdk\\client\\spells\\spellhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\spells\\spellhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|d:\\github\\stealth-bridge-sdk\\client\\skills\\skillclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\skills\\skillclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|d:\\github\\stealth-bridge-sdk\\client\\targeting\\targetingclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\targeting\\targetingclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|d:\\github\\stealth-bridge-sdk\\client\\spells\\spellclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}|StealthBridgeSDK.csproj|solutionrelative:client\\spells\\spellclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,86 +45,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StealthBridgeSDK",
-              "DocumentMoniker": "D:\\GitHub\\Stealth-Bridge-SDK\\StealthBridgeSDK.csproj",
-              "RelativeDocumentMoniker": "StealthBridgeSDK.csproj",
-              "ToolTip": "D:\\GitHub\\Stealth-Bridge-SDK\\StealthBridgeSDK.csproj",
-              "RelativeToolTip": "StealthBridgeSDK.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-05T23:12:32.391Z",
+              "Title": "SpellCastHelper.cs",
+              "DocumentMoniker": "E:\\Stealth Bridge SDK\\Client\\Spells\\SpellCastHelper.cs",
+              "RelativeDocumentMoniker": "Client\\Spells\\SpellCastHelper.cs",
+              "ToolTip": "E:\\Stealth Bridge SDK\\Client\\Spells\\SpellCastHelper.cs",
+              "RelativeToolTip": "Client\\Spells\\SpellCastHelper.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwB0AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T21:33:28.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SpellsWrapper.cs",
-              "DocumentMoniker": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Spells\\SpellsWrapper.cs",
-              "RelativeDocumentMoniker": "Client\\Spells\\SpellsWrapper.cs",
-              "ToolTip": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Spells\\SpellsWrapper.cs",
-              "RelativeToolTip": "Client\\Spells\\SpellsWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAArAAAAAAAAAA==",
+              "Title": "MageryTrainer.cs",
+              "DocumentMoniker": "E:\\TestMagery\\MageryTrainer.cs",
+              "RelativeDocumentMoniker": "..\\TestMagery\\MageryTrainer.cs",
+              "ToolTip": "E:\\TestMagery\\MageryTrainer.cs",
+              "RelativeToolTip": "..\\TestMagery\\MageryTrainer.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:32:59.614Z",
+              "WhenOpened": "2025-04-06T21:28:25.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "StealthBridge.py",
-              "DocumentMoniker": "C:\\Users\\tidus_cku2cdr\\OneDrive\\Downloads\\Stealth New\\StealthBridge.py",
-              "ToolTip": "C:\\Users\\tidus_cku2cdr\\OneDrive\\Downloads\\Stealth New\\StealthBridge.py",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T22:01:22.616Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SpellHelper.cs",
-              "DocumentMoniker": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Spells\\SpellHelper.cs",
-              "RelativeDocumentMoniker": "Client\\Spells\\SpellHelper.cs",
-              "ToolTip": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Spells\\SpellHelper.cs",
-              "RelativeToolTip": "Client\\Spells\\SpellHelper.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
+              "Title": "CharacterWrapper.cs",
+              "DocumentMoniker": "E:\\Stealth Bridge SDK\\Client\\Mobiles\\CharacterWrapper.cs",
+              "RelativeDocumentMoniker": "Client\\Mobiles\\CharacterWrapper.cs",
+              "ToolTip": "E:\\Stealth Bridge SDK\\Client\\Mobiles\\CharacterWrapper.cs",
+              "RelativeToolTip": "Client\\Mobiles\\CharacterWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T17:58:49.853Z"
+              "WhenOpened": "2025-04-06T21:23:08.887Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SkillClient.cs",
-              "DocumentMoniker": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Skills\\SkillClient.cs",
-              "RelativeDocumentMoniker": "Client\\Skills\\SkillClient.cs",
-              "ToolTip": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Skills\\SkillClient.cs",
-              "RelativeToolTip": "Client\\Skills\\SkillClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T17:52:12.625Z"
+              "Title": "bridgeconfig.json",
+              "DocumentMoniker": "E:\\Stealth Bridge SDK\\bridgeconfig.json",
+              "RelativeDocumentMoniker": "bridgeconfig.json",
+              "ToolTip": "E:\\Stealth Bridge SDK\\bridgeconfig.json",
+              "RelativeToolTip": "bridgeconfig.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-06T19:05:23.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StealthBridgeSDK",
+              "DocumentMoniker": "E:\\Stealth Bridge SDK\\StealthBridgeSDK.csproj",
+              "RelativeDocumentMoniker": "StealthBridgeSDK.csproj",
+              "ToolTip": "E:\\Stealth Bridge SDK\\StealthBridgeSDK.csproj",
+              "RelativeToolTip": "StealthBridgeSDK.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-06T19:04:45.502Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "SpellClient.cs",
-              "DocumentMoniker": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Spells\\SpellClient.cs",
-              "RelativeDocumentMoniker": "Client\\Spells\\SpellClient.cs",
-              "ToolTip": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Spells\\SpellClient.cs",
-              "RelativeToolTip": "Client\\Spells\\SpellClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAJAAAAAAAAAA==",
+              "Title": "BridgeConfig.cs",
+              "DocumentMoniker": "E:\\Stealth Bridge SDK\\Client\\Config\\BridgeConfig.cs",
+              "RelativeDocumentMoniker": "Client\\Config\\BridgeConfig.cs",
+              "ToolTip": "E:\\Stealth Bridge SDK\\Client\\Config\\BridgeConfig.cs",
+              "RelativeToolTip": "Client\\Config\\BridgeConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T16:03:48.442Z"
+              "WhenOpened": "2025-04-06T18:56:29.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\TestMagery\\Program.cs",
+              "RelativeDocumentMoniker": "..\\TestMagery\\Program.cs",
+              "ToolTip": "E:\\TestMagery\\Program.cs",
+              "RelativeToolTip": "..\\TestMagery\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T18:51:19.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "TargetingClient.cs",
-              "DocumentMoniker": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Targeting\\TargetingClient.cs",
-              "RelativeDocumentMoniker": "Client\\Targeting\\TargetingClient.cs",
-              "ToolTip": "D:\\GitHub\\Stealth-Bridge-SDK\\Client\\Targeting\\TargetingClient.cs",
-              "RelativeToolTip": "Client\\Targeting\\TargetingClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "Title": "PythonImport.cs",
+              "DocumentMoniker": "E:\\Stealth Bridge SDK\\Client\\PythonImport.cs",
+              "RelativeDocumentMoniker": "Client\\PythonImport.cs",
+              "ToolTip": "E:\\Stealth Bridge SDK\\Client\\PythonImport.cs",
+              "RelativeToolTip": "Client\\PythonImport.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T15:59:25.979Z"
+              "WhenOpened": "2025-04-06T18:44:35.354Z",
+              "EditorCaption": ""
             }
           ]
         }

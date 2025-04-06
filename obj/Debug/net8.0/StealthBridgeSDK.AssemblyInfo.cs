@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StealthBridgeSDK")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e43a0f9433239b82d269c5617fbdb665788c695")]
 [assembly: System.Reflection.AssemblyProductAttribute("StealthBridgeSDK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StealthBridgeSDK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

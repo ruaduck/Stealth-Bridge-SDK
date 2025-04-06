@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -8,15 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="pythonnet" Version="3.0.5" />
+    <PackageReference Include="pythonnet" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Client\Journal\" />
-    <Folder Include="Client\Mobiles\" />
-    <Folder Include="Client\Config\" />
-    <Folder Include="Client\Skills\" />
-    <Folder Include="Client\Targeting\" />
+    <None Update="bridgeconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

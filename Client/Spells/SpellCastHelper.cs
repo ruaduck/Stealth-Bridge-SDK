@@ -27,7 +27,7 @@ namespace StealthBridgeSDK.Spells
         public static bool CanCast(string spellName, int manaCost, float skillRequired, string skillName)
         {
             float skill = SkillWrapper.GetSkillValue(skillName);
-            int mana = CharacterWrapper.GetMana();
+            int mana = CharacterWrapper.GetMana(CharacterWrapper.Self());
             return skill >= skillRequired && mana >= manaCost;
         }
 
@@ -35,46 +35,50 @@ namespace StealthBridgeSDK.Spells
         {
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
-                Console.WriteLine($"Cannot cast {spellName}: not enough skill or mana.");
+                Logger.Warn($"Cannot cast {spellName}: not enough skill or mana.");
                 return;
             }
 
+            Logger.Info($"Casting {spellName}");
             SpellsWrapper.Cast(spellName);
             SetCooldown(spellName);
         }
+        
 
         public static void CastAtTarget(string spellName, uint serial, string skill = "Magery", int manaCost = 0, float minSkill = 0, int timeout = 5000)
         {
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
-                Console.WriteLine($"Cannot cast {spellName}: not enough skill or mana.");
+                Logger.Warn($"Cannot cast {spellName}: not enough skill or mana.");
                 return;
             }
 
+            Logger.Info($"Casting {spellName} at target 0x{serial:X}");
             SpellsWrapper.Cast(spellName);
             SetCooldown(spellName);
 
             if (SpellsWrapper.WaitForTarget(timeout))
                 SpellsWrapper.TargetToObject(serial);
             else
-                Console.WriteLine("Targeting timeout.");
+                Logger.Warn("Targeting timeout.");
         }
 
         public static void CastAtTile(string spellName, ushort x, ushort y, sbyte z, string skill = "Magery", int manaCost = 0, float minSkill = 0, int timeout = 5000)
         {
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
-                Console.WriteLine($"Cannot cast {spellName}: not enough skill or mana.");
+                Logger.Warn($"Cannot cast {spellName}: not enough skill or mana.");
                 return;
             }
 
+            Logger.Info($"Casting {spellName} at tile {x}, {y}, {z}");
             SpellsWrapper.Cast(spellName);
             SetCooldown(spellName);
 
             if (SpellsWrapper.WaitForTarget(timeout))
                 SpellsWrapper.TargetToTile(x, y, z);
             else
-                Console.WriteLine("Targeting timeout.");
+                Logger.Warn("Targeting timeout.");
         }
 
         public static void ChainCast(string spellName, uint serial, int repeat = 3, int delayMs = 2000, string skill = "Magery", int manaCost = 0, float minSkill = 0)
@@ -83,10 +87,11 @@ namespace StealthBridgeSDK.Spells
             {
                 if (!CanCast(spellName, manaCost, minSkill, skill))
                 {
-                    Console.WriteLine($"[{i + 1}] Cannot cast {spellName}: not enough skill or mana.");
+                    Logger.Warn($"[{i + 1}] Cannot cast {spellName}: not enough skill or mana.");
                     break;
                 }
 
+                Logger.Info($"[{i + 1}] Chain casting {spellName} at 0x{serial:X}");
                 CastAtTarget(spellName, serial, skill, manaCost, minSkill);
                 Thread.Sleep(delayMs);
             }

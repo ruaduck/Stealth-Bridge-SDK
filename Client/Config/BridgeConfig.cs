@@ -9,10 +9,10 @@ namespace StealthBridgeSDK
         public string? PythonDll { get; set; }
 
         private static BridgeConfig? _current;
-
+        private static string path = Path.Combine(AppContext.BaseDirectory, "bridgeconfig.json");
         public static BridgeConfig Current => _current ??= Load();
 
-        public static BridgeConfig Load(string path = "bridgeconfig.json")
+        public static BridgeConfig Load()
         {
             if (!File.Exists(path))
                 throw new FileNotFoundException("Missing config file", path);
