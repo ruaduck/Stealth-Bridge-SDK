@@ -5,7 +5,7 @@ namespace StealthBridgeSDK.Spells
 {
     public static class SpellsWrapper
     {
-        private static dynamic _stealth => Py.Import("py_stealth.methods");
+        private static dynamic _stealth => PythonImport.Stealth;
         public static void Cast(string spellName)
         {
             using (Py.GIL())
@@ -37,5 +37,21 @@ namespace StealthBridgeSDK.Spells
                 return _stealth.LastTarget();
             }
         }
+
+        public static void CastToObject(string spellName, uint serial)
+        {
+            using (Py.GIL())
+            {
+                _stealth.CastToObject(spellName, serial);
+            }
+        }
+        public static void TargetToTile(ushort x, ushort y, sbyte z)
+        {
+            using (Py.GIL())
+            {
+                _stealth.TargetToTile(x, y, z);
+            }
+        }
+
     }
 }
