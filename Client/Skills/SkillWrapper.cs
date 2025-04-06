@@ -6,22 +6,22 @@ namespace StealthBridgeSDK.Skills
     {
         private static dynamic _stealth => PythonImport.Stealth;
 
-        public static double GetSkillValue(SkillName skill) =>
-            _stealth.GetSkillValue(skill.ToString());
+        public static float GetSkillValue(SkillName skill) =>
+            _stealth.GetSkillValue(SkillHelper.GetName(skill));
 
         public static double GetSkillCurrentValue(SkillName skill) =>
-            _stealth.GetSkillCurrentValue(skill.ToString());
+            _stealth.GetSkillCurrentValue(SkillHelper.GetName(skill));
 
         public static double GetSkillCap(SkillName skill) =>
-            _stealth.GetSkillCap(skill.ToString());
+            _stealth.GetSkillCap(SkillHelper.GetName(skill));
 
         public static string GetSkillLockState(SkillName skill) =>
-            _stealth.GetSkillLockState(skill.ToString());
+            _stealth.GetSkillLockState(SkillHelper.GetName(skill));
 
         public static void SetSkillLockState(SkillName skill, string state) =>
-            _stealth.SetSkillLockState(skill.ToString(), state);
+            _stealth.SetSkillLockState(SkillHelper.GetName(skill), state);
 
         public static void UseSkill(SkillName skill) =>
-            _stealth.UseSkill(skill.ToString());
+            _stealth.UseSkill(SkillHelper.GetName(skill));
     }
 }

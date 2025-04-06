@@ -1,3 +1,4 @@
+using StealthBridgeSDK.Spells;
 using System;
 
 namespace StealthBridgeSDK.Skills
@@ -23,5 +24,12 @@ namespace StealthBridgeSDK.Skills
                 Console.WriteLine($"{skill} is already at cap.");
             }
         }
+
+        public static void UseSkill(SkillName skill)
+        {
+            SkillWrapper.UseSkill(skill);
+        }
+
+        public static string GetName(SkillName skill) => SkillInfo.SkillMap[skill].Name;
     }
 }

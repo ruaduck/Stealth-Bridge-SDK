@@ -24,14 +24,14 @@ namespace StealthBridgeSDK.Spells
             Cooldowns[spellName] = DateTime.UtcNow;
         }
 
-        public static bool CanCast(string spellName, int manaCost, float skillRequired, string skillName)
+        public static bool CanCast(string spellName, int manaCost, float skillRequired, SkillName skillName)
         {
             float skill = SkillWrapper.GetSkillValue(skillName);
             int mana = CharacterWrapper.GetMana(CharacterWrapper.Self());
             return skill >= skillRequired && mana >= manaCost;
         }
 
-        public static void CastByName(string spellName, string skill = "Magery", int manaCost = 0, float minSkill = 0)
+        public static void CastByName(string spellName, SkillName skill, int manaCost = 0, float minSkill = 0)
         {
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
@@ -45,8 +45,9 @@ namespace StealthBridgeSDK.Spells
         }
         
 
-        public static void CastAtTarget(string spellName, uint serial, string skill = "Magery", int manaCost = 0, float minSkill = 0, int timeout = 5000)
+        public static void CastAtTarget(string spellName, uint serial, SkillName skill, int manaCost = 0, float minSkill = 0, int timeout = 5000)
         {
+            
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
                 Logger.Warn($"Cannot cast {spellName}: not enough skill or mana.");
@@ -63,7 +64,7 @@ namespace StealthBridgeSDK.Spells
                 Logger.Warn("Targeting timeout.");
         }
 
-        public static void CastAtTile(string spellName, ushort x, ushort y, sbyte z, string skill = "Magery", int manaCost = 0, float minSkill = 0, int timeout = 5000)
+        public static void CastAtTile(string spellName, ushort x, ushort y, sbyte z, SkillName skill, int manaCost = 0, float minSkill = 0, int timeout = 5000)
         {
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
@@ -81,7 +82,7 @@ namespace StealthBridgeSDK.Spells
                 Logger.Warn("Targeting timeout.");
         }
 
-        public static void ChainCast(string spellName, uint serial, int repeat = 3, int delayMs = 2000, string skill = "Magery", int manaCost = 0, float minSkill = 0)
+        public static void ChainCast(string spellName, uint serial, int repeat = 3, int delayMs = 2000, SkillName skill = SkillName.Magery, int manaCost = 0, float minSkill = 0)
         {
             for (int i = 0; i < repeat; i++)
             {
