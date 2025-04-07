@@ -60,5 +60,42 @@ namespace StealthBridgeSDK.Character
                 return _stealth.Self();
             }
         }
+        public static int GetHP(uint mobile)
+        {
+            using (Py.GIL())
+            {
+                return _stealth.GetHP(mobile);
+            }
+        }
+        public static int GetMaxHP(uint mobile)
+        {
+            using (Py.GIL())
+            {
+                return _stealth.GetMaxHP(mobile);
+            }
+        }
+        public static uint Backpack()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.Backpack();
+            }
+        }
+        public static bool BandageSelf()
+        {
+            using (Py.GIL())
+            {
+                _stealth.BandageSelf();
+                return true;
+            }
+        }
+        public static bool Attack(uint mobile)
+        {
+            using (Py.GIL())
+            {
+                _stealth.Attack(mobile);
+                return true;
+            }
+        }
     }
 }

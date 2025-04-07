@@ -4,8 +4,6 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StealthBridgeSDK", "StealthBridgeSDK.csproj", "{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMagery", "..\TestMagery\TestMagery.csproj", "{8722490F-0600-4005-AABA-4995D1A148F1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,10 +14,6 @@ Global
 		{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A5FA59-8C59-4F5D-9851-6AC6E8F1816C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8722490F-0600-4005-AABA-4995D1A148F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8722490F-0600-4005-AABA-4995D1A148F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8722490F-0600-4005-AABA-4995D1A148F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8722490F-0600-4005-AABA-4995D1A148F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,6 +11,7 @@ namespace StealthBridgeSDK.Trainers
     public static class MageryTrainer
     {
         private static readonly int CastDelayMs = 1000;
+        private static readonly int EarthquakeCastDelayMs = 6000;
         private static readonly int LogInterval = 10;
         private static readonly int ManaThresholdBuffer = 5;
 
@@ -25,7 +26,7 @@ namespace StealthBridgeSDK.Trainers
                 Logger.Error("Invalid serial input.");
                 return;
             }
-            
+
             Console.Write("Enter target Magery skill to stop at (e.g., 100.0): ");
             string? skillInput = Console.ReadLine();
             if (!float.TryParse(skillInput, out float skillTarget))
@@ -67,16 +68,23 @@ namespace StealthBridgeSDK.Trainers
                     Thread.Sleep(10000); // give time to regain mana
                     continue;
                 }
+                if (MageryHelper.RequiresTarget(Magespell))
+                {
+                    SpellHelper.CastAtTarget(spell, targetSerial, SkillName.Magery);
+                }
+                else
+                {
+                    int castDelayMs = (Magespell == Magery.Earthquake) ? EarthquakeCastDelayMs : CastDelayMs;
+                    SpellHelper.CastByName(spell, SkillName.Magery);
+                    Thread.Sleep(castDelayMs);
+                }
 
-                SpellHelper.CastAtTarget(spell, targetSerial, SkillName.Magery);
                 castCount++;
 
                 if (castCount % LogInterval == 0)
                 {
                     Logger.Info($"Casts: {castCount} | Current Magery: {skill:F1} | Mana: {currentMana}");
                 }
-
-                Thread.Sleep(CastDelayMs);
             }
         }
 
@@ -87,7 +95,7 @@ namespace StealthBridgeSDK.Trainers
             if (skill < 55f) return Magery.GreaterHeal;//"Lightning";
             if (skill < 65f) return Magery.Paralyze;//"Paralyze";
             if (skill < 75f) return Magery.Reveal;//"Reveal";
-            if (skill < 90f) return Magery.FlameStrike;//"Flamestrike";
+            if (skill < 90f) return Magery.MassDispel;//"Flamestrike";
             return Magery.Earthquake; //"Earthquake";
         }
     }

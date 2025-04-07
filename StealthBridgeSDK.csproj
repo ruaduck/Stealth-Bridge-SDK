@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Client\NewFolder\**" />
-    <EmbeddedResource Remove="Client\NewFolder\**" />
-    <None Remove="Client\NewFolder\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="pythonnet" Version="3.0.1" />
   </ItemGroup>
 
@@ -21,6 +15,10 @@
     <None Update="bridgeconfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Client\Gumps\" />
   </ItemGroup>
 
 </Project>

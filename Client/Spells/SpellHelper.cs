@@ -196,6 +196,7 @@ namespace StealthBridgeSDK.Spells
 
     public enum NecromancySpell
     {
+        None,
         AnimateDead,
         BloodOath,
         CorpseSkin,
@@ -216,7 +217,7 @@ namespace StealthBridgeSDK.Spells
 
     public static class NecromancyHelper
     {
-        private static readonly
+        public static readonly
             Dictionary<NecromancySpell, (string Name, bool RequiresTarget, int ManaCost, float MinSkill)> SpellMap =
                 new()
                 {
