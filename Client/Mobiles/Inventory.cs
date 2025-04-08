@@ -2,7 +2,7 @@ using Python.Runtime;
 
 namespace StealthBridgeSDK.Inventory
 {
-    public static class InventoryWrapper
+    public static class Inventory
     {
         private static dynamic _stealth => PythonImport.Stealth;
 

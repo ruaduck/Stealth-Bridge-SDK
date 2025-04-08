@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Client\Gumps\" />
+    <Folder Include="Client\Crafting\" />
   </ItemGroup>
 
 </Project>

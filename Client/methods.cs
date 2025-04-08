@@ -2,13 +2,17 @@
 using System;
 namespace StealthBridgeSDK
 {
-    public class NotImplementedAPI
+    
+
+    public class NotImplemented
     {
+        private static dynamic _stealth => PythonImport.Stealth;
+
+
         // No description
         public dynamic SetEventProc(object EventName, object Callback) => throw new NotImplementedException();
 
-        // No description
-        public dynamic Connected() => throw new NotImplementedException();
+        
 
         // No description
         public dynamic AddToSystemJournal() => throw new NotImplementedException();
@@ -16,14 +20,6 @@ namespace StealthBridgeSDK
         // No description
         public dynamic AddToSystemJournalEx(object value, object textcolor, object bgcolor, object fontsize, object fontname) => throw new NotImplementedException();
 
-        // No description
-        public dynamic GetStealthInfo() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Connect() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Disconnect() => throw new NotImplementedException();
 
         // No description
         public dynamic SetPauseScriptOnDisconnectStatus(object Value) => throw new NotImplementedException();
@@ -132,90 +128,12 @@ namespace StealthBridgeSDK
 
         // No description
         public dynamic UseProxy() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Backpack() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Ground() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Str() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Int() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Dex() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Life() => throw new NotImplementedException();
-
-        // No description
-        public dynamic HP() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Mana() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Stam() => throw new NotImplementedException();
-
-        // No description
-        public dynamic MaxLife() => throw new NotImplementedException();
-
-        // No description
-        public dynamic MaxHP() => throw new NotImplementedException();
-
-        // No description
-        public dynamic MaxMana() => throw new NotImplementedException();
-
-        // No description
-        public dynamic MaxStam() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Luck() => throw new NotImplementedException();
-
-        // No description
-        public dynamic GetExtInfo() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Hidden() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Poisoned() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Paralyzed() => throw new NotImplementedException();
-
-        // No description
-        public dynamic Dead() => throw new NotImplementedException();
-
-        // No description
-        public dynamic WarMode() => throw new NotImplementedException();
-
-        // No description
-        public dynamic WarTargetID() => throw new NotImplementedException();
-
-        // No description
-        public dynamic SetWarMode(object Value) => throw new NotImplementedException();
-
-        // No description
-        public dynamic Attack(object AttackedID) => throw new NotImplementedException();
-
+        
         // No description
         public dynamic UseSelfPaperdollScroll() => throw new NotImplementedException();
 
         // No description
         public dynamic UseOtherPaperdollScroll(object ID) => throw new NotImplementedException();
-
-        // No description
-        public dynamic TargetID() => throw new NotImplementedException();
-
-        // No description
-        public dynamic TargetPresent() => throw new NotImplementedException();
-
-        // No description
-        public dynamic WaitForTarget(object MaxWaitTimeMS) => throw new NotImplementedException();
 
         // No description
         public dynamic CancelTarget() => throw new NotImplementedException();

@@ -2,7 +2,7 @@
 using System.Threading;
 using StealthBridgeSDK.Skills;
 using StealthBridgeSDK.Spells;
-using StealthBridgeSDK.Character;
+using StealthBridgeSDK.Characters;
 
 namespace StealthBridgeSDK.Trainers
 {
@@ -49,7 +49,7 @@ namespace StealthBridgeSDK.Trainers
                     break;
                 }
 
-                int currentMana = CharacterWrapper.GetMana(CharacterWrapper.Self());
+                int currentMana = Character.GetMana();
                 int requiredMana = NecromancyHelper.GetManaCost(NecromancySpell.CurseWeapon);
 
                 if (currentMana < requiredMana + ManaThresholdBuffer)

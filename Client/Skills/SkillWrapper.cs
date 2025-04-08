@@ -5,10 +5,15 @@ namespace StealthBridgeSDK.Skills
     public static class SkillWrapper
     {
         private static dynamic _stealth => PythonImport.Stealth;
-
+        /// <summary>
+        /// Gets the current value of a skill without all modifiers applied. (e.g., gloves, hats, chest, etc.)
+        /// </summary>
         public static float GetSkillValue(SkillName skill) =>
             _stealth.GetSkillValue(SkillHelper.GetName(skill));
 
+        /// <summary>
+        /// Gets the current value of a skill with all modifiers applied. (e.g., gloves, hats, chest, etc.)
+        /// </summary>
         public static double GetSkillCurrentValue(SkillName skill) =>
             _stealth.GetSkillCurrentValue(SkillHelper.GetName(skill));
 

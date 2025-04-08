@@ -4,7 +4,7 @@ using System.Threading;
 using StealthBridgeSDK.Skills;
 using StealthBridgeSDK.Spells;
 using StealthBridgeSDK.Targeting;
-using StealthBridgeSDK.Character;
+using StealthBridgeSDK.Characters;
 
 namespace StealthBridgeSDK.Trainers
 {
@@ -57,10 +57,10 @@ namespace StealthBridgeSDK.Trainers
 
                 string spellName = NecromancyHelper.SpellMap[spell].Name;
                 int requiredMana = NecromancyHelper.GetManaCost(spell);
-                int currentMana = CharacterWrapper.GetMana(CharacterWrapper.Self());
+                int currentMana = Character.GetMana();
 
-                int hp = CharacterWrapper.GetHP(CharacterWrapper.Self());
-                int maxHp = CharacterWrapper.GetMaxHP(CharacterWrapper.Self());
+                int hp = Character.GetHP();
+                int maxHp = Character.GetMaxHP();
                 double hpPercent = (double)hp / maxHp;
 
                 if (spell == NecromancySpell.PainSpike && hpPercent < 0.5)

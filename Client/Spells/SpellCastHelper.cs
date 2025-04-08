@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using StealthBridgeSDK.Skills;
-using StealthBridgeSDK.Character;
+using StealthBridgeSDK.Characters;
+using StealthBridgeSDK.Client.Targeting;
 
 namespace StealthBridgeSDK.Spells
 {
@@ -27,7 +28,7 @@ namespace StealthBridgeSDK.Spells
         public static bool CanCast(string spellName, int manaCost, float skillRequired, SkillName skillName)
         {
             float skill = SkillWrapper.GetSkillValue(skillName);
-            int mana = CharacterWrapper.GetMana(CharacterWrapper.Self());
+            int mana = Character.GetMana();
             return skill >= skillRequired && mana >= manaCost;
         }
 
@@ -58,13 +59,13 @@ namespace StealthBridgeSDK.Spells
             SpellsWrapper.Cast(spellName);
             SetCooldown(spellName);
 
-            if (SpellsWrapper.WaitForTarget(timeout))
-                SpellsWrapper.TargetToObject(serial);
+            if (Target.WaitForTarget(timeout))
+                Target.TargetToObject(serial);
             else
                 Logger.Warn("Targeting timeout.");
         }
 
-        public static void CastAtTile(string spellName, ushort x, ushort y, sbyte z, SkillName skill, int manaCost = 0, float minSkill = 0, int timeout = 5000)
+        public static void CastAtTile(string spellName, ushort tile,ushort x, ushort y, sbyte z, SkillName skill, int manaCost = 0, float minSkill = 0, int timeout = 5000)
         {
             if (!CanCast(spellName, manaCost, minSkill, skill))
             {
@@ -76,8 +77,8 @@ namespace StealthBridgeSDK.Spells
             SpellsWrapper.Cast(spellName);
             SetCooldown(spellName);
 
-            if (SpellsWrapper.WaitForTarget(timeout))
-                SpellsWrapper.TargetToTile(x, y, z);
+            if (Target.WaitForTarget(timeout))
+                Target.TargetToTile(tile,x, y, z);
             else
                 Logger.Warn("Targeting timeout.");
         }

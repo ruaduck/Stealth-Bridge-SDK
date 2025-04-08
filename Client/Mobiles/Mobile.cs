@@ -2,7 +2,7 @@ using Python.Runtime;
 
 namespace StealthBridgeSDK.Mobiles
 {
-    public static class MobileWrapper
+    public static class Mobile
     {
         private static dynamic _stealth => PythonImport.Stealth;
 

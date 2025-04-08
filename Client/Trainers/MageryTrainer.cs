@@ -3,8 +3,9 @@ using System.Threading;
 using StealthBridgeSDK.Skills;
 using StealthBridgeSDK.Spells;
 using StealthBridgeSDK.Targeting;
-using StealthBridgeSDK.Character;
+using StealthBridgeSDK.Characters;
 using StealthBridgeSDK;
+
 
 namespace StealthBridgeSDK.Trainers
 {
@@ -58,7 +59,7 @@ namespace StealthBridgeSDK.Trainers
                 string spell = MageryHelper.SpellMap[Magespell].Name;
 
                 int requiredMana = MageryHelper.GetManaCost(Magespell);
-                int currentMana = CharacterWrapper.GetMana(CharacterWrapper.Self());
+                int currentMana = Character.GetMana();
 
                 if (currentMana < requiredMana + ManaThresholdBuffer)
                 {

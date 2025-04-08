@@ -1,95 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using Python.Runtime;
 
 namespace StealthBridgeSDK.Gumps
 {
     public static class GumpHelper
     {
-        public static void ListAllGumps()
-        {
-            int count = GumpWrapper.GetGumpsCount();
-            Logger.Info($">>> Found {count} Gump(s)");
+        public static int GetGumpID(Dictionary<string, dynamic> gumpInfo)
+            => gumpInfo.TryGetValue("GumpID", out var id) ? (int)id.AsManagedObject(typeof(int)) : 0;
 
-            for (int i = 0; i < count; i++)
+        public static int GetGumpSerial(Dictionary<string, dynamic> gumpInfo)
+            => gumpInfo.TryGetValue("Serial", out var id) ? (int)id.AsManagedObject(typeof(int)) : 0;
+
+        public static List<Dictionary<string, object>> GetElements(Dictionary<string, dynamic> gumpInfo, string key)
+        {
+            var elements = new List<Dictionary<string, object>>();
+
+            if (gumpInfo.TryGetValue(key, out var value))
             {
-                int id = GumpWrapper.GetGumpID(i);
-                int serial = GumpWrapper.GetGumpSerial(i);
-                Logger.Info($"[Gump {i}] ID: {id} | Serial: {serial}");
-
-                var lines = GumpWrapper.GetGumpFullLines(i);
-                if (lines.Any())
+                foreach (PyObject entry in value)   
                 {
-                    Logger.Info("  Text:");
-                    foreach (var text in lines)
-                        Logger.Info($"    - {text}");
-                }
+                    // Skip if it's not a dict
+                    if (!PyDict.IsDictType(entry))
+                        continue;
+                    
+                    var keys = new PyDict(entry); // Convert dict_keys to a list
+                    var dict = new Dictionary<string, object>();
+                    
+                    int len = (int)keys.Length();
 
-                var buttons = GumpWrapper.GetGumpButtonsDescription(i);
-                if (buttons.Any())
-                {
-                    Logger.Info("  Buttons:");
-                    for (int b = 0; b < buttons.Length; b++)
-                        Logger.Info($"    [{b}] {buttons[b]}");
-                }
-            }
-        }
+                    foreach (var k in keys)
+                    {
+                        PyObject val = entry.GetItem(k);
+                        dict[k.ToString()] = val.AsManagedObject(typeof(object));
+                    }
 
-        public static void ClickButtonByIndex(int gumpIndex, int buttonIndex)
-        {
-            Logger.Info($"> Clicking button #{buttonIndex} on Gump {gumpIndex}");
-            GumpWrapper.ClickGumpButton(gumpIndex, buttonIndex);
-        }
-
-        public static void ClickButtonByLabel(int gumpIndex, string label)
-        {
-            var buttons = GumpWrapper.GetGumpButtonsDescription(gumpIndex);
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                if (buttons[i].Contains(label, StringComparison.OrdinalIgnoreCase))
-                {
-                    Logger.Info($"> Clicking button \"{label}\" (#{i}) on Gump {gumpIndex}");
-                    ClickButtonByIndex(gumpIndex, i);
-                    return;
+                    elements.Add(dict);
                 }
             }
-            Logger.Warn($"> Button with label \"{label}\" not found in Gump {gumpIndex}");
+
+            return elements;
         }
 
-        public static int? FindGumpById(int gumpId)
-        {
-            int count = GumpWrapper.GetGumpsCount();
-            for (int i = 0; i < count; i++)
-            {
-                if (GumpWrapper.GetGumpID(i) == gumpId)
-                    return i;
-            }
-            return null;
-        }
+        public static List<Dictionary<string, object>> GetButtons(Dictionary<string, dynamic> gumpInfo)
+            => GetElements(gumpInfo, "GumpButtons");
 
-        public static void CloseAllGumps()
-        {
-            int count = GumpWrapper.GetGumpsCount();
-            for (int i = 0; i < count; i++)
-            {
-                GumpWrapper.CloseClientGump(i);
-                Logger.Info($"> Closed Gump {i}");
-            }
-        }
+        public static List<Dictionary<string, object>> GetTextEntries(Dictionary<string, dynamic> gumpInfo)
+            => GetElements(gumpInfo, "TextEntries");
 
-        public static void CheckCheckbox(int gumpIndex, int checkboxIndex)
-        {
-            Logger.Info($"> Checking checkbox #{checkboxIndex} on Gump {gumpIndex}");
-            GumpWrapper.SetGumpCheckBox(gumpIndex, checkboxIndex, true);
-        }
+        public static List<Dictionary<string, object>> GetCheckboxes(Dictionary<string, dynamic> gumpInfo)
+            => GetElements(gumpInfo, "CheckBoxes");
 
-        public static void SelectRadioButton(int gumpIndex, int radioIndex)
-        {
-            Logger.Info($"> Selecting radio button #{radioIndex} on Gump {gumpIndex}");
-            GumpWrapper.SetGumpRadioButton(gumpIndex, radioIndex, true);
-        }
+        public static List<Dictionary<string, object>> GetRadioButtons(Dictionary<string, dynamic> gumpInfo)
+            => GetElements(gumpInfo, "RadioButtons");
 
-        public static void EnterText(int gumpIndex, int entryIndex, string text)
-        {
-            Logger.Info($"> Entering text at entry #{entryIndex} on Gump {gumpIndex}: \"{text}\"");
-            GumpWrapper.SetGumpTextEntry(gumpIndex, entryIndex, text);
-        }
+        public static List<Dictionary<string, object>> GetTooltips(Dictionary<string, dynamic> gumpInfo)
+            => GetElements(gumpInfo, "Tooltips");
+        public static List<Dictionary<string, object>> GetText(Dictionary<string, dynamic> gumpInfo)
+            => GetElements(gumpInfo, "Text");
     }
 }
