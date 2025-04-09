@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Python.Runtime;
 
-namespace StealthBridgeSDK.Client.Targeting
+namespace StealthBridgeSDK.Targeting
 {
 
     public static class Target

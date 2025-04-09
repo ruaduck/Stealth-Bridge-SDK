@@ -24,7 +24,7 @@ namespace StealthBridgeSDK.Tools
 
                 Dump("Groups", gump.Groups, g => $"  GroupNumber={g.GroupNumber}, Page={g.Page}, ElemNum={g.ElemNum}");
                 Dump("EndGroups", gump.EndGroups, eg => $"  Page={eg.Page}, ElemNum={eg.ElemNum}");
-                Dump("Buttons", gump.Buttons, b => $"  ReturnValue={b.ReturnValue}, Page={b.Page}, Quit={b.Quit} at ({b.X},{b.Y})");
+                Dump("Buttons", gump.Buttons, b => $"  ReturnValue={b.ReturnValue}, Page={b.Page}, PageID={b.PageID}, Quit={b.Quit}, PressedID={b.PressedID}, ReleasedID={b.ReleasedID} at ({b.X},{b.Y})");
                 Dump("ButtonTileArts", gump.ButtonTileArts, b => $"  ReturnValue={b.ReturnValue}, ArtID={b.ArtID}, Hue={b.Hue} at ({b.X},{b.Y})");
                 Dump("CheckBoxes", gump.CheckBoxes, cb => $"  ReturnValue={cb.ReturnValue}, Status={cb.Status} at ({cb.X},{cb.Y})");
                 Dump("ChekerTrans", gump.ChekerTrans, c => $"  Size=({c.Width}x{c.Height}) at ({c.X},{c.Y}) Page={c.Page}");

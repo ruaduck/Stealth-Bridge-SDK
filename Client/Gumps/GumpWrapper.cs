@@ -179,6 +179,7 @@ namespace StealthBridgeSDK.Gumps
 
     public class Gump
     {
+        public int GumpIndex { get; set; }
         public uint Serial { get; set; }
         public uint GumpID { get; set; }
         public short X { get; set; }

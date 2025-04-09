@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using StealthBridgeSDK.Skills;
 using StealthBridgeSDK.Characters;
-using StealthBridgeSDK.Client.Targeting;
+using StealthBridgeSDK.Targeting;
 
 namespace StealthBridgeSDK.Spells
 {

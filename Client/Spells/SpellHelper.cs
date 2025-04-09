@@ -170,7 +170,7 @@ namespace StealthBridgeSDK.Spells
 
     public static class ChivalryHelper
     {
-        private static readonly
+        public static readonly
             Dictionary<ChivalrySpell, (string Name, bool RequiresTarget, int ManaCost, float MinSkill)> SpellMap = new()
             {
                 { ChivalrySpell.CleanseByFire, ("Cleanse by Fire", true, 10, 0.0f) },
