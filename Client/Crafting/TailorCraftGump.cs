@@ -550,7 +550,7 @@ namespace StealthBridgeSDK.Crafting
             {
                 if (!Initialized) Initialize();
                 Gump g = MainGump;
-
+                if (g == null) { Logger.Warn($"Craft Gump came Back Null"); return; }
                 foreach (var e in g.Buttons)
                 {
                     if (!e.ReturnValue.Equals(MiscButton[MiscButtons.EnhanceItem].ReturnValue) && !e.ReleasedID.Equals(MiscButton[MiscButtons.EnhanceItem].ReleasedID) &&
@@ -566,7 +566,7 @@ namespace StealthBridgeSDK.Crafting
             {
                 if (!Initialized) Initialize();
                 Gump g = MainGump;
-
+                if (g == null) { Logger.Warn($"Craft Gump came Back Null"); return; }
                 foreach (var e in g.Buttons)
                 {
                     if (!e.ReturnValue.Equals(MiscButton[MiscButtons.AlterItem].ReturnValue) && !e.ReleasedID.Equals(MiscButton[MiscButtons.AlterItem].ReleasedID) &&
@@ -581,7 +581,7 @@ namespace StealthBridgeSDK.Crafting
             {
                 if (!Initialized) Initialize();
                 Gump g = MainGump;
-
+                if (g == null) { Logger.Warn($"Craft Gump came Back Null"); return; }
                 foreach (var e in g.Buttons)
                 {
                     if (!e.ReturnValue.Equals(MiscButton[MiscButtons.NonQuestItem].ReturnValue) && !e.ReleasedID.Equals(MiscButton[MiscButtons.NonQuestItem].ReleasedID) &&
@@ -596,7 +596,7 @@ namespace StealthBridgeSDK.Crafting
             {
                 if (!Initialized) Initialize();
                 Gump g = MainGump;
-
+                if (g == null) { Logger.Warn($"Craft Gump came Back Null"); return; }
                 foreach (var e in g.Buttons)
                 {
                     if (!e.ReturnValue.Equals(MiscButton[MiscButtons.MakeLast].ReturnValue) && !e.ReleasedID.Equals(MiscButton[MiscButtons.MakeLast].ReleasedID) &&
@@ -612,7 +612,7 @@ namespace StealthBridgeSDK.Crafting
             {
                 if (!Initialized) Initialize();
                 Gump g = MainGump;
-
+                if (g == null) { Logger.Warn($"Craft Gump came Back Null"); return; }
                 foreach (var e in g.Buttons)
                 {
                     if (!e.ReturnValue.Equals(MiscButton[MiscButtons.CraftResource].ReturnValue) && !e.ReleasedID.Equals(MiscButton[MiscButtons.CraftResource].ReleasedID) &&

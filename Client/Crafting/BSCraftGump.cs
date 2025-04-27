@@ -1,5 +1,6 @@
-﻿using StealthBridgeSDK.Gumps;
-using static StealthBridgeSDK.Miscellaneous.RuneBookConfigs;
+﻿using StealthBridgeSDK.Crafting;
+using StealthBridgeSDK;
+using StealthBridgeSDK.Gumps;
 
 namespace StealthBridgeSDK.Crafting
 {
@@ -225,7 +226,7 @@ namespace StealthBridgeSDK.Crafting
     }
     public class BSCrafting
     {
-        public static readonly Dictionary<BSCraftCategory, (int ReturnValue, int PressedID, int ReleasedID)> BlackSmithCategory = new()
+        private static readonly Dictionary<BSCraftCategory, (int ReturnValue, int PressedID, int ReleasedID)> BlackSmithCategory = new()
         {
             {BSCraftCategory.LastTen,(28,4007,4005) },
             {BSCraftCategory.MetalArmor,(1,4007,4005) },
@@ -239,7 +240,7 @@ namespace StealthBridgeSDK.Crafting
             {BSCraftCategory.Throwing,(57,4007,4005) },
             {BSCraftCategory.Miscellaneous,(64,4007,4005) }
         };
-        public static readonly Dictionary<MiscButtons, (int ReturnValue, int PressedID, int ReleasedID)> MiscButton = new()
+        private static readonly Dictionary<MiscButtons, (int ReturnValue, int PressedID, int ReleasedID)> MiscButton = new()
         {
             {MiscButtons.SmeltItem,(14,4007,4005) },
             {MiscButtons.CraftResource,(7,4007,4005) },
@@ -253,7 +254,7 @@ namespace StealthBridgeSDK.Crafting
             {MiscButtons.NonQuestItem,(77,4007,4005) },
             {MiscButtons.MakeLast,(21,4007,4005) }
         };
-        public static readonly Dictionary<BSCraftable, (int ReturnValue, int PressedID, int ReleasedID, BSCraftCategory CraftCategory)> CraftButton = new()
+        private static readonly Dictionary<BSCraftable, (int ReturnValue, int PressedID, int ReleasedID, BSCraftCategory CraftCategory)> CraftButton = new()
         {
             {BSCraftable.RingmailGloves,(2,4007,4005,BSCraftCategory.MetalArmor)},
             {BSCraftable.RingmailLeggings,(9,4007,4005,BSCraftCategory.MetalArmor)},
@@ -471,16 +472,18 @@ namespace StealthBridgeSDK.Crafting
                 }
                 return null;
             }
-            private static void Craft(BSCraftable craft)
+            public static void Craft(BSCraftable craft)
             {
+
                 Gump g = MainGump;
-                ClickCategory(CraftButton[craft].CraftCategory);
+                if (g == null) { Logger.Warn($"Craft Gump came Back Null"); return; }
+                ClickCategory(BSCrafting.CraftButton[craft].CraftCategory);
                 foreach (var e in g.Buttons)
                 {
-                    if (!e.ReturnValue.Equals(CraftButton[craft].ReturnValue) && !e.ReleasedID.Equals(CraftButton[craft].ReleasedID) &&
-                        !e.PressedID.Equals(CraftButton[craft].PressedID)) continue;
+                    if (!e.ReturnValue.Equals(BSCrafting.CraftButton[craft].ReturnValue) && !e.ReleasedID.Equals(BSCrafting.CraftButton[craft].ReleasedID) &&
+                        !e.PressedID.Equals(BSCrafting.CraftButton[craft].PressedID)) continue;
 
-                    GumpButton Button = g.Buttons.First(i => i.ReturnValue.Equals(CraftButton[craft].ReturnValue));
+                    GumpButton Button = g.Buttons.First(i => i.ReturnValue.Equals(BSCrafting.CraftButton[craft].ReturnValue));
                     GumpWrapper.PressButton(g.GumpIndex, Button.ReturnValue);
                     break;
                 }
@@ -492,10 +495,10 @@ namespace StealthBridgeSDK.Crafting
 
                 foreach (var e in g.Buttons)
                 {
-                    if (!e.ReturnValue.Equals(BlackSmithCategory[cat].ReturnValue) && !e.ReleasedID.Equals(BlackSmithCategory[cat].ReleasedID) &&
-                        !e.PressedID.Equals(BlackSmithCategory[cat].PressedID)) continue;
+                    if (!e.ReturnValue.Equals(BSCrafting.BlackSmithCategory[cat].ReturnValue) && !e.ReleasedID.Equals(BSCrafting.BlackSmithCategory[cat].ReleasedID) &&
+                        !e.PressedID.Equals(BSCrafting.BlackSmithCategory[cat].PressedID)) continue;
 
-                    GumpButton Button = g.Buttons.First(i => i.ReturnValue.Equals(BlackSmithCategory[cat].ReturnValue));
+                    GumpButton Button = g.Buttons.First(i => i.ReturnValue.Equals(BSCrafting.BlackSmithCategory[cat].ReturnValue));
                     GumpWrapper.PressButton(g.GumpIndex, Button.ReturnValue);
                     break;
                 }
@@ -506,10 +509,10 @@ namespace StealthBridgeSDK.Crafting
 
                 foreach (var e in g.Buttons)
                 {
-                    if (!e.ReturnValue.Equals(MiscButton[MiscButtons.RepairItem].ReturnValue) && !e.ReleasedID.Equals(MiscButton[MiscButtons.RepairItem].ReleasedID) &&
-                        !e.PressedID.Equals(MiscButton[MiscButtons.RepairItem].PressedID)) continue;
+                    if (!e.ReturnValue.Equals(BSCrafting.MiscButton[MiscButtons.RepairItem].ReturnValue) && !e.ReleasedID.Equals(BSCrafting.MiscButton[MiscButtons.RepairItem].ReleasedID) &&
+                        !e.PressedID.Equals(BSCrafting.MiscButton[MiscButtons.RepairItem].PressedID)) continue;
 
-                    GumpButton Button = g.Buttons.First(i => i.ReturnValue.Equals(MiscButton[MiscButtons.RepairItem].ReturnValue));
+                    GumpButton Button = g.Buttons.First(i => i.ReturnValue.Equals(BSCrafting.MiscButton[MiscButtons.RepairItem].ReturnValue));
                     GumpWrapper.PressButton(g.GumpIndex, Button.ReturnValue);
                     break;
                 }
@@ -598,7 +601,7 @@ namespace StealthBridgeSDK.Crafting
                     break;
                 }
             }
-            public static void ClickCraftResource() 
+            public static void ClickCraftResource()
             {
                 Gump g = MainGump;
 
@@ -612,7 +615,7 @@ namespace StealthBridgeSDK.Crafting
                     break;
                 }
             }
-            public static void ClickScales() 
+            public static void ClickScales()
             {
                 Gump g = MainGump;
 
@@ -628,4 +631,6 @@ namespace StealthBridgeSDK.Crafting
             }
         }
     }
+    
 }
+

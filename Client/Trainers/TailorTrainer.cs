@@ -35,12 +35,14 @@ namespace StealthBridgeSDK.Trainers
             Console.WriteLine($"> Starting Tailor training until {targetSkill:F1} skill...");
             float skill = SkillWrapper.GetSkillValue(SkillName.Tailoring);
             TailorCraftable item = GetOptimalCraftable(skill);
+            TailorCraftGump.Craft(item);
 
             while (true)
             {
                 skill = SkillWrapper.GetSkillValue(SkillName.Tailoring);
                 if (skill >= targetSkill)
                 {
+                    
                     Console.WriteLine($"> Target reached: {skill:F1}");
                     break;
                 }
@@ -60,13 +62,14 @@ namespace StealthBridgeSDK.Trainers
                 else TailorCraftGump.ClickMakeLast();
 
                     // Wait a bit before repeating
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1500);
                 CutItem(item, scissors);
                
             }
         }
         private static void CutItem(TailorCraftable item, uint scissors)
         {
+            
             if (item == TailorCraftable.ShortPants)
             {
                 var count = Inventories.Count(0x152E);
@@ -97,7 +100,119 @@ namespace StealthBridgeSDK.Trainers
                 }
                 
             }
-            
+            else if (item == TailorCraftable.NinjaTabi)
+            {
+                var count = Inventories.Count(0x2797);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x2797, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+            else if (item == TailorCraftable.Cloak)
+            {
+                var count = Inventories.Count(0x1515);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x1515, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+            else if (item == TailorCraftable.FurBoots)
+            {
+                var count = Inventories.Count(0x2307);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x2307, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+            else if (item == TailorCraftable.Robe)
+            {
+                var count = Inventories.Count(0x1F03);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x1F03, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+            else if (item == TailorCraftable.OilCloth)
+            {
+                var count = Inventories.Count(0x175D);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x175D, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+            else if (item == TailorCraftable.Kasa)
+            {
+                var count = Inventories.Count(0x2798);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x2798, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+            else if (item == TailorCraftable.ElvenShirt)
+            {
+                var count = Inventories.Count(0x3176);
+                for (int i = 0; i < count; i++)
+                {
+                    var cutitem = Inventories.FindType(0x3176, Character.Backpack());
+                    if (cutitem != 0)
+                    {
+                        Inventories.UseObject(scissors);
+                        Target.WaitForTarget(1000);
+                        Target.TargetToObject(cutitem);
+                        Thread.Sleep(1000);
+                    }
+                }
+
+            }
+
         }
         private static bool CheckBackPack(uint item)
         {            
@@ -132,7 +247,7 @@ namespace StealthBridgeSDK.Trainers
             if (skill < 65f) return TailorCraftable.Robe;
             if (skill < 72f) return TailorCraftable.Kasa;
             if (skill < 78f) return TailorCraftable.NinjaTabi;
-            if (skill < 110f) return TailorCraftable.OilCloth;
+            if (skill < 99f) return TailorCraftable.OilCloth;
             if (skill < 115f) return TailorCraftable.ElvenShirt;
             if (skill <= 120f) return TailorCraftable.StuddedHiroSode;
 

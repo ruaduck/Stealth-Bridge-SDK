@@ -72,32 +72,101 @@ namespace StealthBridgeSDK.Inventory
             }
         }
         /// <summary>
-        /// Finds an item in the specified container or on the ground. Ground = 0, Backpack is the BackpackID
+        /// Finds an item by its Type in the specified container or on the ground. Ground = 0, Backpack is the BackpackID
         /// </summary>
-        /// <param name="itemid"></param>
+        /// <param name="types"></param>
         /// <param name="container"></param>
-        /// <returns>uint</returns>
-        public static uint FindItem(uint itemid, uint container = 0) //container 0 means GROUND
+        /// <returns></returns>
+        public static uint FindTypes(uint[] types, uint container = 0)
         {
+            uint returnid = 0;
             using (Py.GIL())
             {
-                return _stealth.FindItem(itemid, container);
+                foreach (var type in types)
+                {
+                    Logger.Info($"Finding item of type 0x{type:X} in container 0x{container:X}");
+                    returnid = _stealth.FindType(type, container);
+                    if (returnid != 0) break;                    
+                }
+                return returnid;
             }
         }
         /// <summary>
-        /// Finds an item in the specified container or on the ground. Ground = 0, Backpack is the BackpackID
+        /// Finds an item by its Type in the specified container or on the ground. Ground = 0, Backpack is the BackpackID
         /// </summary>
-        /// <param name="itemid"></param>
+        /// <param name="types"></param>
         /// <param name="color"></param>
         /// <param name="container"></param>
+        /// <returns></returns>
+        public static uint FindTypesEx(uint[] types, int color = -1, uint container = 0)
+        {
+            uint returnid = 0;
+            using (Py.GIL())
+            {
+                foreach (var type in types)
+                {
+                    Logger.Info($"Finding item of type 0x{type:X} in container 0x{container:X}");
+                    returnid = _stealth.FindTypeEx(type, color, container);
+                    if (returnid != 0) break;
+                }
+                return returnid;
+            }
+        }
+        /// <summary>
+        /// Finds an item by its Type in the specified container or on the ground. Ground = 0, Backpack is the BackpackID
+        /// </summary>
+        /// <param name="types"></param>
+        /// <param name="container"></param>
+        /// <returns></returns>
+        public static uint FindTypes(List<uint> types, uint container = 0)
+        {
+            uint returnid = 0;
+            using (Py.GIL())
+            {
+                foreach (var type in types)
+                {
+                    Logger.Info($"Finding item of type 0x{type:X} in container 0x{container:X}");
+                    returnid = _stealth.FindType(type, container);
+                    if (returnid != 0) break;
+                }
+                return returnid;
+            }
+        }
+        /// <summary>
+        /// Finds an item by its Type in the specified container or on the ground. Ground = 0, Backpack is the BackpackID
+        /// </summary>
+        /// <param name="types"></param>
+        /// <param name="color"></param>
+        /// <param name="container"></param>
+        /// <returns></returns>
+        public static uint FindTypesEx(List<uint> types, int color = -1, uint container = 0)
+        {
+            uint returnid = 0;
+            using (Py.GIL())
+            {
+                foreach (var type in types)
+                {
+                    Logger.Info($"Finding item of type 0x{type:X} in container 0x{container:X}");
+                    returnid = _stealth.FindTypeEx(type, color, container);
+                    if (returnid != 0) break;
+                }
+                return returnid;
+            }
+        }
+        /// <summary>
+        /// Returns the last found item.
+        /// </summary>
+        /// <param name="itemid"></param>
+        /// <param name="container"></param>
         /// <returns>uint</returns>
-        public static uint FindItemEx(uint itemid, int color = -1, uint container = 0)
+        public static uint FindItem() //container 0 means GROUND
         {
             using (Py.GIL())
             {
-                return _stealth.FindItemEx(itemid, color, container);
+                return _stealth.FindItem();
             }
         }
+
         /// <summary>
         /// Finds an item in the backpack. Backpack is the BackpackID
         /// </summary>
