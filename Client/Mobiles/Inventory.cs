@@ -225,5 +225,6 @@ namespace StealthBridgeSDK.Inventory
         {
             return FindTypeInBackpack(type, color) != 0;
         }
+
     }
 }

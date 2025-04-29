@@ -36,12 +36,35 @@ namespace StealthBridgeSDK.Mobiles
                 return _stealth.GetMana(serial);
             }
         }
+        public static ushort GetX(uint serial)
+        {
+            using (Py.GIL())
+            {
+                return _stealth.GetX(serial);
+            }
+        }
+
+        public static ushort GetY(uint serial)
+        {
+            using (Py.GIL())
+            {
+                return _stealth.GetY(serial);
+            }
+        }
+        public static byte GetZ(uint serial)
+        {
+            using (Py.GIL())
+            {
+                return _stealth.GetZ(serial);
+            }
+        }
 
         public static string GetName(uint serial)
         {
             using (Py.GIL())
             {
-                return _stealth.GetName(serial);
+                var pyResult = _stealth.GetName(serial);
+                return pyResult.ToString();
             }
         }
 

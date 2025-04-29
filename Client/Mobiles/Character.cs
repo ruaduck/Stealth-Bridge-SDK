@@ -11,6 +11,54 @@ namespace StealthBridgeSDK.Characters
     public static class Character
     {
         private static dynamic _stealth => PythonImport.Stealth;
+        public static ushort GetX()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.PredictedX();
+            }
+        }
+
+        public static ushort GetY()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.PredictedY();
+            }
+        }
+        public static byte GetZ()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.PredictedZ();
+            }
+        }
+        public static byte GetDirection()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.PredictedDirection();
+            }
+        }
+        public static void Say(string str)
+        {
+            using (Py.GIL())
+            {
+                _stealth.UOSay(str);
+            }
+        }
+        public static byte WorldNum()
+        {
+            using (Py.GIL())
+            {
+                return _stealth.WorldNum();
+            }
+        }
+        public static byte PetsCurrent()
+        {
+            using (Py.GIL())
+            { return _stealth.PetsCurrent(); }
+        }
         /// <summary>
         /// Gets the current character's mana.
         /// </summary>
@@ -30,7 +78,7 @@ namespace StealthBridgeSDK.Characters
         {
             using (Py.GIL())
             {
-                return _stealth.GetMaxMana(Self());
+                return (int)_stealth.GetMaxMana(Self());
             }
         }
         /// <summary>
