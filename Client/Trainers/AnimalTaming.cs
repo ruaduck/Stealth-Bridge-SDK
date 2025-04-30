@@ -192,7 +192,10 @@ namespace StealthBridgeSDK.Trainers
             Character.Say($"{name} release");
             Thread.Sleep(500);
             var g = GetGump(3432224886);
-            GumpWrapper.PressButton(g.GumpIndex, 2);
+            if (g != null)
+            {
+                GumpWrapper.PressButton(g.GumpIndex, 2);
+            }
             if (_Magery) 
             { 
                 string spell = MageryHelper.SpellMap[Magery.Fireball].Name;
@@ -306,7 +309,7 @@ namespace StealthBridgeSDK.Trainers
             if (skill < 30f) MobTypes = new ushort[] { 0xD0 };// Chickens
             else if (skill < 45f) MobTypes = new ushort[] { 0xD8, 0xE7, 0xCF, 0xCB };// Cows, Pigs, and Sheep
             else if (skill < 55f) MobTypes = new ushort[] { 0xD7,81, 0x122, 211 }; // Giant Rat, BullFrog, Boar, BlackBear
-            else if (skill < 70f) MobTypes = new ushort[] { 63, 167, 47}; //Cougar, BrownBear, Alligator
+            else if (skill < 72f) MobTypes = new ushort[] { 63, 167, 47}; //Cougar, BrownBear, Alligator
             else MobTypes = new ushort[] { 0xE8, 0xE9, 80};//Bulls,Giant Toad
         }
     }
